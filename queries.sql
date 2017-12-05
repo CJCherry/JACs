@@ -6,12 +6,12 @@ INSERT INTO User (
 	siteURL)
 VALUES (
 	"Person",
-	"badPassword123"
+	"badPassword123",
 	"http://www.imdb.com/");
 
 /*Search by genre, user types in "Animated"*/
 SELECT * FROM Movie
-WHERE genre = "Animated";
+WHERE genre = "Animation";
 
 /*
 	In Flask it'd look like this: 
@@ -78,9 +78,10 @@ VALUES (
 SELECT title
 FROM Movie
 WHERE movieID = 
-(SELECT movieID
+(SELECT Movie.movieID
 FROM Favorite, Movie
 WHERE username = "Person"
+AND Movie.movieID = Favorite.movieID
 AND userRating > averageRating);
 
 /*Let's now update a user's password. The user would type their password for 

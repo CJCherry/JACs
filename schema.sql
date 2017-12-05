@@ -30,7 +30,7 @@ DROP TABLE IF EXISTS Rates;
 CREATE TABLE Rates (
 	siteURL 		TEXT NOT NULL,
 	movieID 		INTEGER NOT NULL,
-	siteRating 		REAL NOT NULL UNIQUE,
+	siteRating 		REAL NOT NULL,
 	PRIMARY KEY (siteURL, movieID),
 	FOREIGN KEY(siteURL) REFERENCES RatingSite(siteURL)
 			ON UPDATE CASCADE,
@@ -108,7 +108,7 @@ INSERT INTO Rates(
 	movieID,
 	siteRating)
 VALUES (
-	"http://www.rottentomatoes.com/",
+	"https://www.rottentomatoes.com/",
 	(SELECT movieID
 		FROM Movie
 		WHERE title = "Coco"),
@@ -145,8 +145,8 @@ INSERT INTO Movie (
 VALUES (
 	"Justice League",
 	2017,
-	"Chris Terrio",
 	"Joss Whedon",
+	"Zack Snyder",
 	"Action",
 	6.6
 	);
@@ -168,7 +168,7 @@ INSERT INTO Rates(
 	movieID,
 	siteRating)
 VALUES (
-	"http://www.rottentomatoes.com/",
+	"https://www.rottentomatoes.com/",
 	(SELECT movieID
 		FROM Movie
 		WHERE title = "Justice League"),
@@ -224,7 +224,7 @@ INSERT INTO Rates(
 	movieID,
 	siteRating)
 VALUES (
-	"http://www.rottentomatoes.com/",
+	"https://www.rottentomatoes.com/",
 	(SELECT movieID
 		FROM Movie
 		WHERE title = "Moana"),
@@ -281,7 +281,7 @@ INSERT INTO Rates(
 	movieID,
 	siteRating)
 VALUES (
-	"http://www.rottentomatoes.com/",
+	"https://www.rottentomatoes.com/",
 	(SELECT movieID
 		FROM Movie
 		WHERE title = "Star Wars: Episode I"),
@@ -337,7 +337,7 @@ INSERT INTO Rates(
 	movieID,
 	siteRating)
 VALUES (
-	"http://www.rottentomatoes.com/",
+	"https://www.rottentomatoes.com/",
 	(SELECT movieID
 		FROM Movie
 		WHERE title = "Star Wars: Episode IV"),
@@ -394,7 +394,7 @@ INSERT INTO Rates(
 	movieID,
 	siteRating)
 VALUES (
-	"http://www.rottentomatoes.com/",
+	"https://www.rottentomatoes.com/",
 	(SELECT movieID
 		FROM Movie
 		WHERE title = "Baby Driver"),
@@ -452,7 +452,7 @@ INSERT INTO Rates(
 	movieID,
 	siteRating)
 VALUES (
-	"http://www.rottentomatoes.com/",
+	"https://www.rottentomatoes.com/",
 	(SELECT movieID
 		FROM Movie
 		WHERE title = "Avatar"),
@@ -508,7 +508,7 @@ INSERT INTO Rates(
 	movieID,
 	siteRating)
 VALUES (
-	"http://www.rottentomatoes.com/",
+	"https://www.rottentomatoes.com/",
 	(SELECT movieID
 		FROM Movie
 		WHERE title = "Inception"),
@@ -563,7 +563,7 @@ INSERT INTO Rates(
 	movieID,
 	siteRating)
 VALUES (
-	"http://www.rottentomatoes.com/",
+	"https://www.rottentomatoes.com/",
 	(SELECT movieID
 		FROM Movie
 		WHERE title = "Airplane!"),
@@ -618,7 +618,7 @@ INSERT INTO Rates(
 	movieID,
 	siteRating)
 VALUES (
-	"http://www.rottentomatoes.com/",
+	"https://www.rottentomatoes.com/",
 	(SELECT movieID
 		FROM Movie
 		WHERE title = "Pretty Woman"),
@@ -676,7 +676,7 @@ INSERT INTO Rates(
 	movieID,
 	siteRating)
 VALUES (
-	"http://www.rottentomatoes.com/",
+	"https://www.rottentomatoes.com/",
 	(SELECT movieID
 		FROM Movie
 		WHERE title = "IT"),
